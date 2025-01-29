@@ -1,4 +1,4 @@
-# GO_CAR_APPLICATION
+# Ride Sharing Service App
 
 Desktop application using Spring Boot JAVA that allows driver to select and deselect cars.
 
