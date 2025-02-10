@@ -53,7 +53,9 @@ public class DataModelService {
         return specificationCriteria.findAllBySimpleQuery(request);
     }
 
-    //enable drivers to select a car
+    /* enable drivers to select a car they are driving with.
+    If a second driver tries to select an already used car it throws an exception car already in use.*/
+
     public void selectCar(int carId, int driverId) throws Exception {
 
         DriverEntity driver = driverRepository.getOne(driverId);

@@ -17,6 +17,7 @@ public class DriverDto {
 
     private DriverStatus status;
 
+    // map the selected car to the driver
     private CarEntity car;
 
 } //ENDCLASS
