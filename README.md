@@ -17,7 +17,7 @@ in your IDE press debug or run button, then the application will start on port 8
 
 in your browser redirect to http://localhost:8088 and provide following credentials:
 
-username: adimn
+username: admin
 password: password
 
 - to generate the binary run mvn clean deploy
