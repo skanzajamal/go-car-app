@@ -8,5 +8,6 @@ import lombok.Data;
 public class SearchRequest {
 
     private String status;
-    private String coordinate;
+    private Double latitude;
+    private Double longitude;
 }

@@ -21,12 +21,15 @@ public class DriverEntity {
     @NotNull
     private String password;
 
-    @NotNull
-    private String coordinate;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private DriverStatus status;
+
+    @NotNull
+    private Double latitude;
+
+    @NotNull
+    private Double longitude;
 
     @JoinColumn(name = "car_id", referencedColumnName = "id")
     @OneToOne

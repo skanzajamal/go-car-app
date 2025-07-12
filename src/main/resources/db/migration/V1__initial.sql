@@ -15,7 +15,8 @@ CREATE TABLE driver(
   user_name         VARCHAR(64)   NOT NULL,
   password          VARCHAR(64)   NOT NULL,
   status            VARCHAR(64)   NOT NULL,
-  coordinate        VARCHAR(255)  NOT NULL,
+  latitude          DOUBLE        NOT NULL,
+  longitude         DOUBLE        NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (car_id) REFERENCES car(id)
 );

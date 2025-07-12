@@ -34,8 +34,9 @@ public class DtoConverter {
         driverDto.setPassword(driverEntity.getPassword());
         driverDto.setStatus(driverEntity.getStatus());
         driverDto.setCar(driverEntity.getCar());
+        driverDto.setLatitude(driverEntity.getLatitude());
+        driverDto.setLongitude(driverEntity.getLongitude());
         driverDto.setStatus(driverEntity.getStatus());
-        driverDto.setCoordinate(driverEntity.getCoordinate());
         return driverDto;
     }
 

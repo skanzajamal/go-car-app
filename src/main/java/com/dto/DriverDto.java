@@ -13,9 +13,11 @@ public class DriverDto {
 
     private String password;
 
-    private String coordinate;
-
     private DriverStatus status;
+
+    private Double latitude;
+
+    private Double longitude;
 
     // map the selected car to the driver
     private CarEntity car;

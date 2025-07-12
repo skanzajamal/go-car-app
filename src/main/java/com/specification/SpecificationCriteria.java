@@ -3,6 +3,7 @@ package com.specification;
 import com.entity.DriverEntity;
 import com.enumeration.DriverStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -27,11 +28,16 @@ public class SpecificationCriteria {
         cq.select(root);
         List<Predicate> predicates = new ArrayList<>();
 
-        if(request.getStatus()!=null){
-            predicates.add(cb.equal(root.get("status"), request.getStatus()));
+        if(request.getStatus()!=null) {
+            predicates.add(cb.equal(root.get("status"), DriverStatus.valueOf(request.getStatus())));
         }
-        if(request.getCoordinate()!=null){
-            predicates.add(cb.equal(root.get("coordinate"), request.getCoordinate()));
+        if (request.getLatitude() != null || request.getLongitude() != null) {
+            if ((request.getLatitude() != null) ^ (request.getLongitude() != null)) {
+                throw new RuntimeException("Both latitude and longitude must be provided together.");
+            }
+            // if longitude and latitude not null, so add predicates
+            predicates.add(cb.equal(root.get("latitude"), request.getLatitude()));
+            predicates.add(cb.equal(root.get("longitude"), request.getLongitude()));
         }
         cq.where(predicates.toArray(new Predicate[0]));
         return em.createQuery(cq).getResultList();

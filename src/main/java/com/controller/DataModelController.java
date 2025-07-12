@@ -28,8 +28,9 @@ public class DataModelController {
     @RequestMapping(value = "/driver/criteria/get", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<DriverDto> driverList
             (@RequestParam(value = "status", required = false) String status,
-             @RequestParam(value = "coordinate", required = false) String coordinate) {
-        SearchRequest request = new SearchRequest(status, coordinate);
+             @RequestParam(value = "latitude", required = false) Double latitude,
+             @RequestParam(value = "longitude", required = false) Double longitude) {
+        SearchRequest request = new SearchRequest(status, latitude, longitude);
         return DtoConverter.toDtoDriverList(dataModelService.driverList(request));
     }
 
@@ -65,6 +66,5 @@ public class DataModelController {
     public DriverDto getDriver(@PathVariable int driverId){
         return DtoConverter.toDto(dataModelService.getDriver(driverId));
     }
-
 
 } //ENDCLASS

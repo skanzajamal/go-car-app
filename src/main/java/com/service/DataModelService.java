@@ -61,20 +61,14 @@ public class DataModelService {
         DriverEntity driver = driverRepository.getOne(driverId);
         CarEntity car = carRepository.getOne(carId);
 
-        if (DriverStatus.OFFLINE == driver.getStatus())
-        {
-            throw new Exception("Driver must be ONLINE to select a car");
-        }
+        if (DriverStatus.OFFLINE == driver.getStatus()) {
+            throw new Exception("Driver must be ONLINE to select a car");}
 
-        if (driver.getCar() != null)
-        {
-            throw new Exception("Driver has already selected a Car");
-        }
+        if (driver.getCar() != null) {
+            throw new Exception("Driver has already selected a Car");}
 
-        if (car.getCarStatus() == CarStatus.IN_USE)
-        {
-            throw new Exception(String.format("Car %s is already in use", carId));
-        }
+        if (car.getCarStatus() == CarStatus.IN_USE) {
+            throw new Exception(String.format("Car %s is already in use", carId));}
 
         car.setCarStatus(CarStatus.IN_USE);
         driver.setCar(car);
