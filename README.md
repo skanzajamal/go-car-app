@@ -15,7 +15,7 @@ Desktop application using Spring Boot JAVA that allows driver to select and dese
 
 in your IDE press debug or run button, then the application will start on port 8088
 
-in your browser redirect to http://localhost:8088 and provide following credentials:
+api docs: open in browser http://localhost:8088/swagger-ui/index.html# and provide following credentials:
 
 username: admin
 password: password
