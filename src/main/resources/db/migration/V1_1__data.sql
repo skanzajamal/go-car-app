@@ -7,10 +7,9 @@ insert into car (id, license_plate, seat_count, convertible, rating, engine_type
 (6, '111-44-s', 5, TRUE, 5, 'GAS', 'free', 'AUDI'),
 (7, '331-66-sx', 5, TRUE, 5, 'ELECTRIC', 'free', 'VolksWagen');
 
--- driver 9 and 10 will have cars selected
+-- Data for Drivers
 
 -- Create 3 OFFLINE drivers
-
 insert into driver (driver_id, latitude, longitude, status, password, user_name)values
     (1, -33.8688, 151.2093, 'OFFLINE','driver01pw', 'driver01');
 
@@ -20,8 +19,7 @@ insert into driver (driver_id, latitude, longitude, status, password, user_name)
 insert into driver (driver_id, latitude, longitude, status, password, user_name) values
     (3, 35.6895, 139.6917, 'OFFLINE', 'driver03pw', 'driver03');
 
--- Create 3 ONLINE drivers
-
+-- Create ONLINE drivers
 insert into driver (driver_id, latitude, longitude, status, password, user_name) values
     (4, -23.5505, -46.6333, 'ONLINE', 'driver04pw', 'driver04');
 
@@ -31,14 +29,15 @@ insert into driver (driver_id, latitude, longitude, status, password, user_name)
 insert into driver (driver_id, latitude, longitude, status, password, user_name) values
     (6, 19.4326, -99.1332, 'ONLINE', 'driver06pw', 'driver06');
 
-insert into driver (driver_id, latitude, longitude, status, password, user_name, car_id) values
-    (10, 1.3521, 103.8198, 'ONLINE', 'driver10pw', 'driver10', 6);
-
 insert into driver (driver_id, latitude, longitude, status, password, user_name) values
     (7, 55.954, 9.5, 'OFFLINE','driver07pw', 'driver07');
 
 insert into driver (driver_id, latitude, longitude, status, password, user_name) values
     (8, 37.7, 2.3522, 'ONLINE', 'driver08pw', 'driver08');
 
+-- driver 9 and 10 will have cars selected
 insert into driver (driver_id, latitude, longitude, status, password, user_name, car_id) values
     (9, 51.5074, -0.1278, 'ONLINE', 'driver09pw', 'driver09', 7);
+
+insert into driver (driver_id, latitude, longitude, status, password, user_name, car_id) values
+    (10, 1.3521, 103.8198, 'ONLINE', 'driver10pw', 'driver10', 6);
