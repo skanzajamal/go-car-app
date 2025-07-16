@@ -13,10 +13,10 @@ import javax.validation.constraints.NotNull;
 public class CarEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column
+    @Column(name = "license_plate", unique = true)
     @NotNull
     private String licensePlate;
 

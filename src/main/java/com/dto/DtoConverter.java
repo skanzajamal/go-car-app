@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @Getter
 public class DtoConverter {
 
-    private static CarDto toDto(CarEntity carEntity) {
+    public static CarDto toDto(CarEntity carEntity) {
 
         CarDto carDto = new CarDto();
         carDto.setId(carEntity.getId());

@@ -3,6 +3,7 @@ package com.controller;
 import com.dto.CarDto;
 import com.dto.DriverDto;
 import com.dto.DtoConverter;
+import com.entity.CarEntity;
 import com.entity.DriverEntity;
 import com.repository.DriverRepository;
 import com.service.DataModelService;
@@ -56,6 +57,11 @@ public class DataModelController {
     }
 
     // crud operations
+
+    @RequestMapping(value = "/car/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public CarDto addCar(@RequestBody CarEntity car) {
+        return DtoConverter.toDto(dataModelService.addCar(car));
+    }
 
     @RequestMapping(value = "/driver/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public DriverDto addDriver(@RequestBody DriverEntity driver) {

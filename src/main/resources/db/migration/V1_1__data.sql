@@ -2,10 +2,10 @@
 insert into car (id, license_plate, seat_count, convertible, rating, engine_type, car_status, manufacturer) values
 (1, '12311-ax', 4, TRUE, 4, 'GAS', 'free', 'Skoda'),
 (2, '125-cf', 5, FALSE, 3, 'ELECTRIC', 'free', 'Fiat'),
-(4, '125-54-c', 2, FALSE, 3, 'GAS', 'free', 'Ford'),
-(5, '985-54-c', 7, FALSE, 5, 'HYBRID', 'free', 'BMW'),
-(6, '111-44-s', 5, TRUE, 5, 'GAS', 'free', 'AUDI'),
-(7, '331-66-sx', 5, TRUE, 5, 'ELECTRIC', 'free', 'VolksWagen');
+(3, '125-54-c', 2, FALSE, 3, 'GAS', 'free', 'Ford'),
+(4, '985-54-c', 7, FALSE, 5, 'HYBRID', 'free', 'BMW'),
+(5, '111-44-s', 5, TRUE, 5, 'GAS', 'free', 'AUDI'),
+(6, '331-66-sx', 5, TRUE, 5, 'ELECTRIC', 'free', 'VolksWagen');
 
 -- Data for Drivers
 
@@ -37,7 +37,7 @@ insert into driver (driver_id, latitude, longitude, status, password, user_name)
 
 -- driver 9 and 10 will have cars selected
 insert into driver (driver_id, latitude, longitude, status, password, user_name, car_id) values
-    (9, 51.5074, -0.1278, 'ONLINE', 'driver09pw', 'driver09', 7);
+    (9, 51.5074, -0.1278, 'ONLINE', 'driver09pw', 'driver09', 5);
 
 insert into driver (driver_id, latitude, longitude, status, password, user_name, car_id) values
     (10, 1.3521, 103.8198, 'ONLINE', 'driver10pw', 'driver10', 6);

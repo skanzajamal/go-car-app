@@ -102,6 +102,10 @@ public class DataModelService {
 
     // CRUD operations
 
+    public CarEntity addCar(CarEntity car) {
+        return carRepository.save(car);
+    }
+
     public DriverEntity addDriver(DriverEntity driver){
         return driverRepository.save(driver);
     }
